@@ -1,5 +1,5 @@
 /**
- *    Copyright 2009-2019 the original author or authors.
+ *    Copyright 2009-2020 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -77,6 +77,10 @@ public class TextSqlNode implements SqlNode {
       Object value = OgnlCache.getValue(content, context.getBindings());
       String srtValue = value == null ? "" : String.valueOf(value); // issue #274 return "" instead of "null"
       checkInjection(srtValue);
+      //for mongodb only
+      if (value instanceof String) {
+        srtValue = "'" + srtValue + "'";
+      }
       return srtValue;
     }
 

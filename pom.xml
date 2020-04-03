@@ -26,7 +26,8 @@
     <relativePath />
   </parent>
 
-  <artifactId>mybatis</artifactId>
+  <groupId>cn.gov.zjport.zb</groupId>
+  <artifactId>mybatis-mongo-only</artifactId>
   <version>3.5.5-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -36,6 +37,8 @@
     applications. MyBatis couples objects with stored procedures or SQL statements using a XML descriptor or
     annotations. Simplicity is the biggest advantage of the MyBatis data mapper over object relational mapping
     tools.
+
+    NOTE:改jar包只用于访问mongodb使用,不可以用来访问mysql等其他数据库
   </description>
   <url>http://www.mybatis.org/mybatis-3</url>
 
